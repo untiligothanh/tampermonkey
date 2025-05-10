@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Script auto next page và click gửi tin nhắn gấu bông
 // @namespace    http://tampermonkey.net/
-// @version      1.0.1
+// @version      1.0.2
 // @description  try to take over the world!
 // @author       You
 // @match        https://gaubong.us/users/online/nu*
@@ -19,7 +19,7 @@
         for (const button of buttons) {
             while (document.querySelector('#messenger_box')) {
                 console.log('Đã tồn tại #messenger_box, đợi 5 giây...');
-                await new Promise(resolve => setTimeout(resolve, 5000));
+                await new Promise(resolve => setTimeout(resolve, 3500));
             }
 
             console.log('Không thấy #messenger_box, click button...');
