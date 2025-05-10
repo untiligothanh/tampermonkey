@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         New Userscript
+// @name         Script auto send fist tin nhắn gấu bông
 // @namespace    http://tampermonkey.net/
 // @version      2025-04-25
 // @description  try to take over the world!
