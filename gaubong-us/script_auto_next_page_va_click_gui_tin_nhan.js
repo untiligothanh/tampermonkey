@@ -46,7 +46,7 @@
             url.searchParams.set('page', '1');
             window.location.href = url.toString(); // Quay lại page 1
         }
-        goToNextPageOrRestart();
+        processPage();
     }
 
     setTimeout(() => {
