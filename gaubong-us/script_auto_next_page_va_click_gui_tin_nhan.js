@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Script auto next page và click gửi tin nhắn gấu bông
 // @namespace    http://tampermonkey.net/
-// @version      1.0.0
+// @version      1.0.1
 // @description  try to take over the world!
 // @author       You
 // @match        https://gaubong.us/users/online/nu*
@@ -46,7 +46,9 @@
             url.searchParams.set('page', '1');
             window.location.href = url.toString(); // Quay lại page 1
         }
-        processPage();
+        setTimeout(() => {
+            processPage();
+        }, 3000);
     }
 
     setTimeout(() => {
