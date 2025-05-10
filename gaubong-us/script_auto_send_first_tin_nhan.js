@@ -19,15 +19,12 @@
     link.href = cssUrl;
     document.head.appendChild(link);
 
-    window.alert = function(str) {
+    window.handlerAlert = function(str) {
         if(str.trim() == "Người này chỉ nhận tin nhắn từ bạn bè!" || str.trim() == "Người này chỉ nhận tin nhắn từ danh bạ liên hệ!"){
             const cancelIcon = document.querySelector(".icon-cancel-circled.text-red.cursor-pointer");
             cancelIcon.click();
         }
-        new Notify({
-            text: str,
-        })
-    };
+    }
 
     setInterval(function () {
         const messengerBox = document.getElementById("messenger_box");
