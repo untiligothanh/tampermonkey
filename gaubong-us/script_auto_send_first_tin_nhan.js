@@ -42,7 +42,7 @@
         // Nếu messenger rỗng thì điền email (nếu chưa có)
         if (message === "Danh sách tin nhắn trống!") {
             if ( emailInput.value.trim() === "") {
-                emailInput.value = "Hi em, em muốn tìm mối quan hệ như nào ?"; // Thay giá trị phù hợp ở đây
+                emailInput.value = "Hi em, anh đang tò mò muốn biết em tìm mối quan hệ như nào. Anh tìm mối quan hệ bạn tình kín đáo"; // Thay giá trị phù hợp ở đây
             }
 
         }else{
