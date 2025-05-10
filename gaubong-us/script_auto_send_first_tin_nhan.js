@@ -7,17 +7,10 @@
 // @match        https://gaubong.us/users/online/nu*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=gaubong.us
 // @grant        none
-// @require      https://cdn.jsdelivr.net/npm/simple-notify/dist/simple-notify.min.js
 // ==/UserScript==
 
 (function() {
     'use strict';
-
-    const cssUrl = 'https://cdn.jsdelivr.net/npm/simple-notify/dist/simple-notify.css';
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = cssUrl;
-    document.head.appendChild(link);
 
     window.handlerAlert = function(str) {
         if(str.trim() == "Người này chỉ nhận tin nhắn từ bạn bè!" || str.trim() == "Người này chỉ nhận tin nhắn từ danh bạ liên hệ!"){
