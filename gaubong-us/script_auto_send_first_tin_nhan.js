@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Script auto send fist tin nhắn gấu bông
 // @namespace    http://tampermonkey.net/
-// @version      1.0.4
+// @version      1.0.5
 // @description  try to take over the world!
 // @author       You
 // @match        https://gaubong.us/users/online/nu*
@@ -23,7 +23,7 @@
         }
     }
 
-    setInterval(function () {
+    setInterval(async function () {
         const messengerBox = document.getElementById("messenger_box");
         const emailInput = document.getElementById("comment_mail_write");
         const submitBtn = document.getElementById("submit_mail_write");
@@ -32,14 +32,15 @@
         if (!messengerBox || !emailInput || !submitBtn) return;
 
         const message = messengerBox.textContent.trim();
+        await new Promise(resolve => setTimeout(resolve, 500));
 
         // Nếu messenger rỗng thì điền email (nếu chưa có)
         if (message === "Danh sách tin nhắn trống!" && window.msgGauBong) {
-            if ( emailInput.value.trim() === "") {
+            if (emailInput.value.trim() === "") {
                 emailInput.value = window.msgGauBong; // Thay giá trị phù hợp ở đây
             }
 
-        }else{
+        } else {
             if (cancelIcon) {
                 cancelIcon.click();
             }
@@ -50,7 +51,7 @@
             submitBtn.click();
 
         }
-    }, 500);
+    }, 700);
 
     // Your code here...
 })();
