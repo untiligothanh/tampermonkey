@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Script auto send fist tin nhắn gấu bông
 // @namespace    http://tampermonkey.net/
-// @version      1.0.2
+// @version      1.0.3
 // @description  try to take over the world!
 // @author       You
 // @match        https://gaubong.us/users/online/nu*
@@ -13,7 +13,10 @@
     'use strict';
 
     window.handlerAlert = function(str) {
-        if(str.trim() == "Người này chỉ nhận tin nhắn từ bạn bè!" || str.trim() == "Người này chỉ nhận tin nhắn từ danh bạ liên hệ!"){
+        if(str.trim() == "Người này chỉ nhận tin nhắn từ bạn bè!"
+            || str.trim() == "Người này chỉ nhận tin nhắn từ danh bạ liên hệ!"
+            || str.trim() == "Người dùng đã chặn tin nhắn từ bạn!"
+        ){
             const cancelIcon = document.querySelector(".icon-cancel-circled.text-red.cursor-pointer");
             cancelIcon.click();
         }
