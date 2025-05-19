@@ -15,15 +15,16 @@
      pls config window.msgGauBong
      example: window.msgGauBong="Hi em, anh đang tò mò muốn biết em tìm mối quan hệ như nào. Anh tìm mối quan hệ bạn tình kín đáo <3 <3"
      **/
-    window.handlerAlert = function(str) {
-        if(str.trim() !== "Vui lòng chát chậm lại, sau 3 giây!"
-        ){
-            const cancelIcon = document.querySelector(".icon-cancel-circled.text-red.cursor-pointer");
-            cancelIcon.click();
-        }
-    }
 
     setInterval(async function () {
+        window.handlerAlert = function(str) {
+            if(str.trim() !== "Vui lòng chát chậm lại, sau 3 giây!"
+            ){
+                const cancelIcon = document.querySelector(".icon-cancel-circled.text-red.cursor-pointer");
+                cancelIcon.click();
+            }
+        }
+
         const messengerBox = document.getElementById("messenger_box");
         const emailInput = document.getElementById("comment_mail_write");
         const submitBtn = document.getElementById("submit_mail_write");
