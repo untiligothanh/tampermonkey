@@ -30,9 +30,9 @@
         const cancelIcon = document.querySelector(".icon-cancel-circled.text-red.cursor-pointer");
 
         if (!messengerBox || !emailInput || !submitBtn) return;
+        await new Promise(resolve => setTimeout(resolve, 500));
 
         const message = messengerBox.textContent.trim();
-        await new Promise(resolve => setTimeout(resolve, 500));
 
         // Nếu messenger rỗng thì điền email (nếu chưa có)
         if (message === "Danh sách tin nhắn trống!" && window.msgGauBong) {
