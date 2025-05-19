@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Script auto send fist tin nhắn gấu bông
 // @namespace    http://tampermonkey.net/
-// @version      1.0.3
+// @version      1.0.4
 // @description  try to take over the world!
 // @author       You
 // @match        https://gaubong.us/users/online/nu*
@@ -11,11 +11,12 @@
 
 (function() {
     'use strict';
-
+    /**
+     pls config window.msgGauBong
+     example: window.msgGauBong="Hi em, anh đang tò mò muốn biết em tìm mối quan hệ như nào. Anh tìm mối quan hệ bạn tình kín đáo <3 <3"
+     **/
     window.handlerAlert = function(str) {
-        if(str.trim() == "Người này chỉ nhận tin nhắn từ bạn bè!"
-            || str.trim() == "Người này chỉ nhận tin nhắn từ danh bạ liên hệ!"
-            || str.trim() == "Người dùng đã chặn tin nhắn từ bạn!"
+        if(str.trim() !== "Vui lòng chát chậm lại, sau 3 giây!"
         ){
             const cancelIcon = document.querySelector(".icon-cancel-circled.text-red.cursor-pointer");
             cancelIcon.click();
@@ -33,9 +34,9 @@
         const message = messengerBox.textContent.trim();
 
         // Nếu messenger rỗng thì điền email (nếu chưa có)
-        if (message === "Danh sách tin nhắn trống!") {
+        if (message === "Danh sách tin nhắn trống!" && window.msgGauBong) {
             if ( emailInput.value.trim() === "") {
-                emailInput.value = "Hi em, anh đang tò mò muốn biết em tìm mối quan hệ như nào. Anh tìm mối quan hệ bạn tình kín đáo"; // Thay giá trị phù hợp ở đây
+                emailInput.value = window.msgGauBong; // Thay giá trị phù hợp ở đây
             }
 
         }else{
